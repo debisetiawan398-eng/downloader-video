@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Downloader Pro</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #121212; color: white; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+        .container { background: #1e1e1e; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); width: 90%; max-width: 450px; text-align: center; }
+        h1 { color: #ff3e3e; margin-bottom: 10px; }
+        p { color: #aaa; font-size: 14px; }
+        input { width: 100%; padding: 12px; margin: 20px 0; border: none; border-radius: 8px; background: #333; color: white; box-sizing: border-box; outline: none; border: 1px solid #444; }
+        input:focus { border-color: #ff3e3e; }
+        button { background: #ff3e3e; color: white; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; font-weight: bold; width: 100%; transition: 0.3s; }
+        button:hover { background: #e63535; transform: translateY(-2px); }
+        .footer { margin-top: 20px; font-size: 11px; color: #555; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Video Downloader</h1>
+    <p>Tempel link video dari TikTok, IG, atau YouTube</p>
+    
+    <input type="text" id="videoUrl" placeholder="https://www.tiktok.com/@user/video/...">
+    
+    <button onclick="prosesDownload()">Ambil Video</button>
+
+    <div id="status" style="margin-top: 15px; color: #ffbd44; font-size: 14px;"></div>
+    
+    <div class="footer">
+        Dibuat dengan ❤️ di GitHub
+    </div>
+</div>
+
+<script>
+    function prosesDownload() {
+        const url = document.getElementById('videoUrl').value;
+        const status = document.getElementById('status');
+
+        if (!url) {
+            alert("Tolong tempel link videonya dulu ya!");
+            return;
+        }
+
+        status.innerHTML = "Sedang memproses... mohon tunggu sebentar.";
+
+        // Catatan: Ini adalah logika simulasi untuk tampilan. 
+        // Untuk download beneran, kamu butuh API Key dari layanan seperti RapidAPI.
+        setTimeout(() => {
+            status.innerHTML = "❌ Maaf, server sedang sibuk atau link tidak valid. Coba lagi nanti.";
+            status.style.color = "#ff4444";
+        }, 3000);
+    }
+</script>
+
+</body>
+</html>
